@@ -1,0 +1,21 @@
+<input type="file" class="form-control" multiple (change)="onFileChange($event)">
+
+<div>
+    <span *ngIf="isValid == false" class="text-danger">El archivo que intenta subir supera el máximo de
+        {{maxFileLength}}MB</span>
+</div>
+
+<table class="table table-striped table-hover mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">File Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let file of myFiles; let i = index">
+            <td>{{file.name}}</td>
+            <td><i class="far fa-trash-alt text-danger cursor-pointer" (click)="clickDelete(i)"></i></td>
+        </tr>
+    </tbody>
+</table>
