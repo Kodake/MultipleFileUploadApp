@@ -10,6 +10,7 @@ export class MultipleFileUploadComponent implements OnInit {
   myFiles: string[] = [];
   maxFileLength: number = 1;
   isValid: boolean = true;
+  exist: boolean = false;
 
   constructor() { }
 
