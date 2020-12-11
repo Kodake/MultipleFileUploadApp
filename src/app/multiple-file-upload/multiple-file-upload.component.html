@@ -8,12 +8,14 @@
         <thead class="table-dark">
           <tr>
             <th scope="col">File Name</th>
+            <th scope="col">Size</th>
             <th class="d-flex justify-content-end">Action</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let file of myFiles; let i = index">
             <td>{{file.name}}</td>
+            <td>{{file.size / 1024 | number: '1.2-2'}}</td>
             <td><i class="far fa-trash-alt text-danger cursor-pointer d-flex justify-content-end px-3" (click)="clickDelete(i)"></i></td>
           </tr>
         </tbody>
